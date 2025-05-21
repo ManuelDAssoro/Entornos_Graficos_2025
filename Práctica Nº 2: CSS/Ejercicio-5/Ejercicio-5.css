@@ -1,0 +1,9 @@
+h1 strong {color: red;}
+div p *[href] {background-color: black;}
+ul #ultimo {color: yellow;} 
+ul #ultimo *[href] {color: blue;}
+h1 #importante {background-color: red;}
+div #importante {background-color: green;}
+title h1 {color: blue;}
+ol a [href]{color:blue;}
+ol a[href]:visited {color:purple; text-decoration: none;}
