@@ -1,0 +1,47 @@
+.bg-sidebar {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-rect-1 {
+    background-color: lightgreen;
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-rect-2 {
+    background-color: lightcoral;
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-rect-3 {
+    background-color: lightyellow;
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-rect-4 {
+    background-color: lightpink;
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-rect-5 {
+    background-color: lightgray;
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-rect-6 {
+    background-color: lightgoldenrodyellow;
+    padding: 10px;
+    text-align: center;
+}
+
+.bg-rect-celeste {
+    background-color: lightcyan;
+    padding: 10px;
+    text-align: center;
+}   

@@ -1,0 +1,23 @@
+.bg-row-1 {
+    background-color: lightblue;
+}
+
+.bg-row-2-col-1 {
+    background-color: lightgreen;
+}
+
+.bg-row-2-col-2 {
+    background-color: lightcoral;
+}
+
+.bg-sm-row-1 {
+    background-color: lightyellow;
+}
+
+.bg-sm-row-2 {
+    background-color: lightpink;
+}
+
+.bg-sm-row-3 {
+    background-color: lightgray;
+}
