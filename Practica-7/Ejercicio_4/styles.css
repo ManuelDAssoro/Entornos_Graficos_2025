@@ -52,3 +52,9 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+footer button{
+    height: 10vh;
+    width: 20vw;
+    font-size: 2rem;
+}

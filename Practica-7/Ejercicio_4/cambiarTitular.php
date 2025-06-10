@@ -25,5 +25,10 @@
         </h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel nisi id libero tincidunt tincidunt. Nullam vehicula, justo a tincidunt fermentum, eros lorem tincidunt libero, nec tincidunt ligula lorem non nisi.</p>
     </main>
+    <footer>
+        <a href="index.php">
+            <button type="button">Cambiar Titular</button>
+        </a>
+    </footer>
 </body>
 </html>
