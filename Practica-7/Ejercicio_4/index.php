@@ -6,16 +6,16 @@
     <title>Ejercicio 4</title>
 </head>
 <body>
-    <form action="cambiarTitular.php" method="post"
+    <form action="cambiarTitular.php" method="post">
         <p>Seleccione el tipo de titular:</p>
         <br>
-        <input type="radio" name="titular" value="politica">
+        <input type="radio" name="titular" value="Politica">
         <label for="politica">Noticia Politica</label>
         <br>
-        <input type="radio" name="titular" value="economica">
+        <input type="radio" name="titular" value="Economica">
         <label for="politica">Noticia Economica</label>
         <br>
-        <input type="radio" name="titular" value="deportiva">
+        <input type="radio" name="titular" value="Deportiva">
         <label for="politica">Noticia Deportiva</label>
         <br>
         <input type="submit" value="Enviar">
