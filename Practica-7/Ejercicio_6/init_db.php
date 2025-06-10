@@ -8,6 +8,10 @@ if (!file_exists('base2.db')) {
         mail TEXT NOT NULL
     )";
     $db->exec($query);
+    $insertQuery = "INSERT INTO alumnos (nombre, codigocurso, mail) VALUES 
+        ('Juan', 101, 'juan.perez@example.com'),
+        ('María', 102, 'maria.lopez@example.com')";
+    $db->exec($insertQuery);
     $db->close();
 }
 ?>
