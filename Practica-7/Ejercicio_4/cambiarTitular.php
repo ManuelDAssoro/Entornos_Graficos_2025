@@ -1,6 +1,16 @@
 <?php
     if(isset($_POST['titular'])){
         $noticia = $_POST['titular'];
+        setcookie("noticiaActual",$noticia,time()+(60*60*24*30));
+
+    }elseif(isset($_COOKIE["noticiaActual"])){
+        $noticia = $_COOKIE["noticiaActual"];
+    }
+
+    if (isset($_POST['clearCookie'])) {
+        setcookie("noticiaActual", "", time() - 3600); 
+        header("Location: index.php"); 
+        exit();
     }
 ?>
 
@@ -26,9 +36,9 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel nisi id libero tincidunt tincidunt. Nullam vehicula, justo a tincidunt fermentum, eros lorem tincidunt libero, nec tincidunt ligula lorem non nisi.</p>
     </main>
     <footer>
-        <a href="index.php">
-            <button type="button">Cambiar Titular</button>
-        </a>
+        <form action="cambiarTitular.php" method="POST">
+            <button type="submit" name="clearCookie">Cambiar Titular</button>
+        </form>
     </footer>
 </body>
 </html>

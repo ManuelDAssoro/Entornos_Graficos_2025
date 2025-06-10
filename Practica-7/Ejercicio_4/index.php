@@ -6,6 +6,12 @@
     <title>Ejercicio 4</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+<?php
+    if (isset($_COOKIE['noticiaActual'])) {
+        header("Location: cambiarTitular.php");
+        exit();
+}
+?>
 <body>
     <form action="cambiarTitular.php" method="post">
         <p>Seleccione el tipo de titular:</p>
