@@ -20,7 +20,7 @@ if (!file_exists('Compras.db')) {
 
 function obtenerCatalogo() {
     $db = new SQLite3('Compras.db'); 
-    $query = "SELECT * FROM catálogo";
+    $query = "SELECT * FROM catalogo";
     $result = $db->query($query);
 
     $catalogo = []; 

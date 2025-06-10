@@ -1,5 +1,28 @@
 <?php
 require_once 'crearCatalogo.php';
+session_start();
+
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = [];
+}
+
+if (isset($_POST['cerrar_sesion'])) {
+    session_destroy();}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+    $idProducto = intval($_POST['id']);
+    $db = new SQLite3('Compras.db');
+    $query = $db->prepare('SELECT * FROM catalogo WHERE id = :id');
+    $query->bindValue(':id', $idProducto, SQLITE3_INTEGER);
+    $result = $query->execute();
+
+    if ($producto = $result->fetchArray(SQLITE3_ASSOC)) {
+        $_SESSION['carrito'][] = $producto;
+        $mensaje = "Producto agregado al carrito: " . htmlspecialchars($producto['producto']);
+    }
+
+    $db->close();
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +44,7 @@ require_once 'crearCatalogo.php';
                     <th>ID</th>
                     <th>Producto</th>
                     <th>Precio</th>
+                    <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,19 +53,42 @@ require_once 'crearCatalogo.php';
                         <td><?php echo htmlspecialchars($item['id']); ?></td>
                         <td><?php echo htmlspecialchars($item['producto']); ?></td>
                         <td><?php echo htmlspecialchars(number_format($item['precio'], 2)); ?></td>
+                        <td><form action="" method="POST">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($item['id']); ?>">
+                                <button type="submit">Agregar al Carrito</button>
+</form></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     <?php endif; ?>
+    <form action="" method="POST">
+        <button type="submit" name="cerrar_sesion">Vaciar Carrito</button>
+    </form>
+
+        
+    <h2>Carrito</h2>
+    <?php if (!empty($_SESSION['carrito'])): ?>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($_SESSION['carrito'] as $item): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($item['id']); ?></td>
+                        <td><?php echo htmlspecialchars($item['producto']); ?></td>
+                        <td><?php echo htmlspecialchars(number_format($item['precio'], 2)); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>El carrito está vacío.</p>
+    <?php endif; ?>
 </body>
 </html>
-<!--
-Ejercicio N° 7
-Confeccionar un CARRITO DE COMPRAS simple, usando Base de Datos. Se debe crear una base de
-datos con el nombre Compras. En dicha base crear una tabla llamada catálogo con los siguientes
-atributos:
-id
-producto del tipo varchar de 100
-precio del tipo numérico decimal de 9 entero y 2 decimales. 
--->
