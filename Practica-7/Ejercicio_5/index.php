@@ -1,6 +1,4 @@
-<?php
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +11,10 @@
         <h3>Inicar Sesion</h3>
         <br>
         <label for="usuario">Usuario: </label>
-        <input type="text" id="usuario" required>
+        <input type="text" id="usuario" name="usuario" required>
         <br>
         <label for="clave">Clave: </label>
-        <input type="text" id="clave" required>
+        <input type="text" id="clave" name="clave" required>
         <br>
         <input type="submit" value="Ingresar">
     </form>
