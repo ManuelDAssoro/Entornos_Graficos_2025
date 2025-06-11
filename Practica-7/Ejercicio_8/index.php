@@ -1,5 +1,6 @@
 <?php
-require_once("init_db.php")
+require_once("init_db.php");
+$hayResultados = false;
 ?>
 
 <!DOCTYPE html>
@@ -13,13 +14,9 @@ require_once("init_db.php")
 <body>
     <h1>Buscador de Canciones</h1>
     <form action="buscador.php" method="post" name="formBuscador">
-        <label for="palabra">Buscar: </label>
+
         <input type="text" id="palabra" name="palabra">
+        <input type="submit" value="Buscar">
     </form>
 </body>
 </html>
-<!--
-Ejercicio N° 8
-Confeccionar un BUSCADOR de canciones. Para ello deberá crear una base de datos llamada
-prueba y una tabla denominada buscador con el atributo canciones
--->

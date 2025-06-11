@@ -31,8 +31,9 @@ if(isset($_POST["palabra"])){
                 <li><?php echo htmlspecialchars($cancion, ENT_QUOTES, 'UTF-8'); ?></li>
             <?php endforeach; ?>
         </ul>
-    <?php else: ?>
-        <h1>No se encontraron resultados.</h1>
     <?php endif; ?>
+    <form action="index.php" method="get">
+        <button type="submit">Regresar</button>
+    </form>
 </body>
 </html>
