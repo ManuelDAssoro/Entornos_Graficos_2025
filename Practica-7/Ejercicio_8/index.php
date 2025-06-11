@@ -1,5 +1,5 @@
 <?php
-include("conexion.inc")
+require_once("init_db.php")
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ include("conexion.inc")
     <h1>Buscador de Canciones</h1>
     <form action="buscador.php" method="post" name="formBuscador">
         <label for="palabra">Buscar: </label>
-        <input type="text" id="palabra">
+        <input type="text" id="palabra" name="palabra">
     </form>
 </body>
 </html>

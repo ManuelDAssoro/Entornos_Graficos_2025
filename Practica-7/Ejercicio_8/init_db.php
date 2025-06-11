@@ -7,11 +7,11 @@ if (!file_exists('prueba.db')) {
     )";
     $db->exec($query);
     $insertQuery = "INSERT INTO buscador (canciones) VALUES
-        ('Bohemian Rhapsody'),
-        ('Stairway to Heaven'),
+        ('Cementerio Club'),
+        ('Cantata de puentes amarillos'),
         ('Bajan'),
         ('Cinema Verite'),
-        ('Smells Like Teen Spirit')";
+        ('Todas las hojas son del viento')";
     $db->exec($insertQuery);
 }
 ?>
